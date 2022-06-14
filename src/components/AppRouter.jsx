@@ -1,22 +1,36 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import About from '../pages/About';
-import Error from '../pages/Error';
-import Home from '../pages/Home';
-import Posts from '../pages/Posts';
+import { publicRoutes, privateRoutes } from '../router';
 
 const AppRouter = () => {
+  const isAuth = true;
+
   return (
+    isAuth
+    ? 
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/posts" element={<Posts />} />
-  
+      {privateRoutes.map(route =>
+        <Route 
+          element={route.component}
+          path={route.path}
+          exact={route.exact = true}
+        />
+      )}
       {/* если ввести несущ-й путь перекинуть на этот компонент */}
       <Route path="*" element={<Navigate to="/error" />} />
-      <Route path="/error" element={<Error />} />
     </Routes>
-  )
-}
+    :
+    <Routes>
+      {publicRoutes.map(route =>
+        <Route 
+          element={route.component}
+          path={route.path}
+          exact={route.exact = true}
+        />
+      )}
+      <Route path="*" element={<Navigate to="/login" />} />
+    </Routes>
+  );
+};
 
 export default AppRouter;
