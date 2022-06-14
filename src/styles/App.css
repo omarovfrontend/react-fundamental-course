@@ -6,7 +6,8 @@
 
 #root {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App {
@@ -38,6 +39,7 @@
   transition: all .5s ease-in;
 }
 
+/* pagination */
 .page__wrapper {
   margin-top: 30px;
   display: flex;
@@ -54,4 +56,37 @@
 .page__current {
   border: 2px solid orange;
   font-weight: bold;
+}
+
+/* navbar */
+.navbar {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #d3d3d3;
+}
+
+.navbar__links {
+  margin-left: auto;
+}
+
+.navbar__links a {
+  margin: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #666;
+  border-right: 2px solid #fff;
+  padding-right: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.navbar__links a:last-child {
+  border-right: none;
+}
+
+.navbar__links a:hover {
+  color: #000;
+  text-decoration: underline;
 }
