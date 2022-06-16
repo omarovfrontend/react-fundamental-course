@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 800px;
+  margin-bottom: 30px;
+}
+
+.post {
+  display: flex;
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post__btns {
+  display: flex;
+}
+
+.post-enter {
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  transform: translateX(0px);
+  transition: all .5s ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  transform: translateX(-350px);
+  transition: all .5s ease-in;
+}
+
+/* pagination */
+.page__wrapper {
+  margin-top: 30px;
+  display: flex;
+}
+
+.page {
+  padding: 10px 15px;
+  border: 1px solid teal;
+  cursor: pointer;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.page__current {
+  border: 2px solid orange;
+  font-weight: bold;
+}
+
+/* navbar */
+.navbar {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #d3d3d3;
+}
+
+.navbar__links {
+  margin-left: auto;
+}
+
+.navbar__links a {
+  margin: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #666;
+  border-right: 2px solid #fff;
+  padding-right: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.navbar__links a:last-child {
+  border-right: none;
+}
+
+.navbar__links a:hover {
+  color: #000;
+  text-decoration: underline;
+}
